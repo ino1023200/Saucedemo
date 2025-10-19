@@ -37,7 +37,7 @@ public class FirefoxWebDriver extends WebDriverManager{
         options.setBinary("src/test/resources/firefox/firefox");
         options.addArguments("--width=1920");
         options.addArguments("--height=1080");
-//        options.setHeadless(true);
+        options.setHeadless(true);
         driver = new FirefoxDriver(firefoxDriverService,options);
     }
 }
