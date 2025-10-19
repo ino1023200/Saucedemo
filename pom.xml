@@ -135,7 +135,7 @@
                                 <browser>chrome</browser>
                             </systemPropertyVariables>
                             <includes>
-                                <include>**/TestRunner.java</include>
+                                <include>**/ChromeTestRunner.java</include>
                             </includes>
                             <reportsDirectory>target/surefire-reports-chrome</reportsDirectory>
                         </configuration>
@@ -157,7 +157,7 @@
                                 <browser>firefox</browser>
                             </systemPropertyVariables>
                             <includes>
-                                <include>**/TestRunner.java</include>
+                                <include>**/FirefoxTestRunner.java</include>
                             </includes>
                             <reportsDirectory>target/surefire-reports-firefox</reportsDirectory>
                         </configuration>

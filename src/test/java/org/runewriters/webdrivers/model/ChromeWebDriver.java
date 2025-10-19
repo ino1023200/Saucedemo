@@ -39,7 +39,7 @@ public class ChromeWebDriver extends WebDriverManager{
         options.addArguments("--no-sandbox");
         options.addArguments("--remote-allow-origins=*");
         options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--headless=new");
+//        options.addArguments("--headless=new");
         options.addArguments("--window-size=1920,1080");
 
         driver = new ChromeDriver(chromeDriverService, options);

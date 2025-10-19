@@ -38,6 +38,9 @@ jobs:
         run: mvn clean install -B
 
       # 5. Install browsers
+        #5.1 Install Firefox
+
+
 
       # 6. Run Selenium tests with Maven profile
       - name: Run Selenium tests
