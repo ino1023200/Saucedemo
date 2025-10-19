@@ -1,2 +1,44 @@
+name: Java Selenium CI
+
 on:
-  workflow_dispatch: 
+  push:
+    branches:
+      - main
+  workflow_dispatch:  # trigger thủ công
+
+jobs:
+  selenium-tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        browser: [chrome, firefox]  # tạo job song song cho từng browser
+    steps:
+      # 1. Checkout code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. Setup Java 17
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 17
+
+      # 3. Cache Maven dependencies
+      - name: Cache Maven dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
+      # 4. Build project
+      - name: Build with Maven
+        run: mvn clean install -B
+
+      # 5. Install browsers
+
+      # 6. Run Selenium tests with Maven profile
+      - name: Run Selenium tests
+        run: mvn test -P ${{ matrix.browser }} -B
