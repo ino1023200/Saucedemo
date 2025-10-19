@@ -2,6 +2,8 @@
 
 ## Usage Guide for Linux
 
+* IntelliJ Community Edition Version 2025.2.3
+
 After cloning the project, run the build for `pom.xml`. All necessary libraries have already been prepared.
 
 ### Setup Browsers and Drivers
