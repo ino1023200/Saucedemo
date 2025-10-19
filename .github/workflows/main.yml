@@ -38,10 +38,21 @@ jobs:
         run: mvn clean install -B
 
       # 5. Install browsers
+
         #5.1 Install Firefox
+        #cd to resources
+        #get firefox and firefox driver by wget
+        #unzip firefox and firefox driver
 
-
+        #5.2 Install Chrome
+        #cd to resources
+        #get chrome and chrome driver by wget
+        #unzip chrome and chrome driver
 
       # 6. Run Selenium tests with Maven profile
       - name: Run Selenium tests
         run: mvn test -P ${{ matrix.browser }} -B
+
+        # run parallel browsers
+      - name: Run Selenium tests
+        run: mvn test -P parallel-browsers -B
