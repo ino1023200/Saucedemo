@@ -237,5 +237,4 @@ public class InventoryStepDefs {
         Assertions.assertEquals("6",inventoryPage.getShoppingCartBadge());
     }
 
-    // XÓA @After tearDown() - Hooks sẽ xử lý
 }

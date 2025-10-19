@@ -21,7 +21,7 @@ mvn clean test -P parallel-browsers
 # Check exit code
 if [ $? -eq 0 ]; then
     echo ""
-    echo -e "${GREEN}✅ Test execution completed!${NC}"
+    echo -e "${GREEN}Test execution completed!${NC}"
     echo ""
     echo "📊 Reports:"
     echo "   - Chrome HTML: target/cucumber-reports/chrome/cucumber.html"
@@ -30,6 +30,6 @@ if [ $? -eq 0 ]; then
     echo ""
 else
     echo ""
-    echo -e "${YELLOW}⚠️ Some tests may have failed. Check reports for details.${NC}"
+    echo -e "${YELLOW}Some tests may have failed. Check reports for details.${NC}"
     echo ""
 fi

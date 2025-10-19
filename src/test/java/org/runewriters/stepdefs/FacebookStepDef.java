@@ -72,5 +72,5 @@ public class FacebookStepDef {
         }
     }
 
-    // XÓA @After tearDown() - Hooks sẽ xử lý
+
 }

@@ -156,7 +156,7 @@ public class CartStepDefs {
         int cartSizeBefore = cartPage.getCartSize();
         cartPage.clickRemoveItemAtIndex(0);
         // Có thể thêm verify cart size giảm nếu cần
-        System.out.println("✓ Remove button is clickable");
+        System.out.println("Remove button is clickable");
     }
 
     @When("An item is displayed in the cart page")
@@ -175,5 +175,4 @@ public class CartStepDefs {
         System.out.println("✓ Product price is visible: " + price);
     }
 
-    // XÓA @After tearDown() - Hooks sẽ xử lý
 }

@@ -81,5 +81,4 @@ public class CheckoutTwoStepdefs {
         Assertions.assertEquals("https://www.saucedemo.com/cart.html", cartPage.getCurrentURL());
     }
 
-    // XÓA @After tearDown() - Hooks sẽ xử lý
 }

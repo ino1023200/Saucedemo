@@ -19,7 +19,6 @@ public class LoginStepDefs {
 
     @Given("I am on the Login Page")
     public void iAmOnTheLoginPage() {
-        // Chỉ cần 1 dòng để lấy driver
         webDriver = DriverManager.getDriver();
         webDriver.get("https://www.saucedemo.com");
         loginPage = new LoginPage(webDriver);
@@ -65,5 +64,4 @@ public class LoginStepDefs {
         loginPage.enterPassword("invalid_password");
     }
 
-    // XÓA @After tearDown() - Hooks sẽ xử lý
 }

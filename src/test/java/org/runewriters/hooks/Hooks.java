@@ -64,7 +64,7 @@ public class Hooks {
                     FileUtils.copyFile(screenshot, destination);
 
                     System.out.println(String.format(
-                            "📸 [%s] [Thread-%d] Screenshot saved: %s",
+                            "[%s] [Thread-%d] Screenshot saved: %s",
                             browser.toUpperCase(),
                             Thread.currentThread().getId(),
                             destination.getAbsolutePath()
@@ -75,11 +75,11 @@ public class Hooks {
                     scenario.attach(screenshotBytes, "image/png", fileName);
 
                 } catch (Exception e) {
-                    System.err.println("❌ Failed to capture screenshot: " + e.getMessage());
+                    System.err.println("Failed to capture screenshot: " + e.getMessage());
                     e.printStackTrace();
                 }
             } else {
-                System.err.println("⚠️ Cannot take screenshot - Driver is null");
+                System.err.println("Cannot take screenshot - Driver is null");
             }
         }
     }

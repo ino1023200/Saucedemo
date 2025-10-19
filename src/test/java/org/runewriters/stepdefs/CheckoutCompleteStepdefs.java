@@ -77,5 +77,4 @@ public class CheckoutCompleteStepdefs {
         //Assertions.assertEquals(cartPage.isCartEmpty());
     }
 
-    // XÓA @After tearDown() - Hooks sẽ xử lý
 }

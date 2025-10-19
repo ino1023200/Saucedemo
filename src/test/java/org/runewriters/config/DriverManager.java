@@ -60,7 +60,7 @@ public class DriverManager {
             webDriverManager.quitDriver();
             driver.remove();
             manager.remove();
-            System.out.println("✓ Driver closed and cleaned up");
+            System.out.println("Driver closed and cleaned up");
         }
     }
 

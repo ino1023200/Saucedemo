@@ -5,10 +5,6 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
-/**
- * Test Runner cho Chrome Browser
- * Chạy song song với FirefoxTestRunner
- */
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/features",
@@ -27,10 +23,5 @@ public class ChromeTestRunner {
     // Chạy trước khi JUnit khởi tạo runner
     static {
         System.setProperty("browser", "chrome");
-        System.out.println("═══════════════════════════════════════════");
-        System.out.println("🚀 CHROME TEST RUNNER INITIALIZED");
-        System.out.println("   Thread: " + Thread.currentThread().getName());
-        System.out.println("   Browser: CHROME");
-        System.out.println("═══════════════════════════════════════════");
     }
 }
