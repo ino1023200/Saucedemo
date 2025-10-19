@@ -37,7 +37,7 @@ public class DriverManager {
             driver.set(webDriver);
             manager.set(webDriverManager);
 
-            System.out.println("✓ Created new " + browserType.toUpperCase() + " driver");
+            System.out.println("Created new " + browserType.toUpperCase() + " driver");
         }
         return driver.get();
     }
