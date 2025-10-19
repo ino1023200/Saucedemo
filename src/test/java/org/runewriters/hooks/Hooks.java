@@ -19,23 +19,15 @@ import java.util.Date;
  */
 public class Hooks {
 
-    /**
-     * Chạy TRƯỚC mỗi scenario
-     * Khởi tạo browser context
-     */
+
     @Before
     public void beforeScenario(Scenario scenario) {
         String browser = System.getProperty("browser", "chrome");
         String threadName = Thread.currentThread().getName();
         long threadId = Thread.currentThread().getId();
 
-        // Driver sẽ được tạo lazy khi step def gọi DriverManager.getDriver()
-    }
 
-    /**
-     * Chụp màn hình khi test case failed
-     * Order = 1 để chạy TRƯỚC @After(order=0)
-     */
+    }
     @After(order = 1)
     public void takeScreenshotOnFailure(Scenario scenario) {
         if (scenario.isFailed()) {
