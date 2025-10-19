@@ -1,6 +1,6 @@
 # SaucedemoFramework
 
-## Usage Guide
+## Usage Guide for Linux
 
 After cloning the project, run the build for `pom.xml`. All necessary libraries have already been prepared.
 
