@@ -44,6 +44,34 @@ jobs:
         #get firefox and firefox driver by wget
         #unzip firefox and firefox driver
 
+      - name: Prepare Firefox folders
+        run: |
+          mkdir -p "$FIREFOX_DIR"
+
+      - name: Download Firefox (latest)
+        run: |
+          wget -O "$FIREFOX_DIR/firefox.tar.bz2" \
+            "https://download.mozilla.org/?product=firefox-latest&os=linux64&lang=${LANG_CODE}"
+
+      - name: Unpack Firefox
+        run: |
+          tar -xjf "$FIREFOX_DIR/firefox.tar.bz2" -C "$FIREFOX_DIR"
+          rm "$FIREFOX_DIR/firefox.tar.bz2"
+          echo "$GITHUB_WORKSPACE/$FIREFOX_DIR/firefox" >> $GITHUB_PATH
+
+      - name: Download GeckoDriver (latest)
+        run: |
+          LATEST_URL=$(wget -qO- https://api.github.com/repos/mozilla/geckodriver/releases/latest \
+            | jq -r '.assets[] | select(.name | test("linux64.tar.gz$")) | .browser_download_url')
+          wget -O "$FIREFOX_DIR/geckodriver.tar.gz" "$LATEST_URL"
+
+      - name: Unpack GeckoDriver
+        run: |
+          tar -xzf "$FIREFOX_DIR/geckodriver.tar.gz" -C "$FIREFOX_DIR"
+          rm "$FIREFOX_DIR/geckodriver.tar.gz"
+          chmod +x "$FIREFOX_DIR/geckodriver"
+          echo "$GITHUB_WORKSPACE/$FIREFOX_DIR" >> $GITHUB_PATH
+
         #5.2 Install Chrome
         #cd to resources
         #get chrome and chrome driver by wget
